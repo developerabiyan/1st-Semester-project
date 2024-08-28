@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Alphine Ascents</title>
+         <!--  Stylesheet -->
+        <style>
+            /*******************************/
+/********* General CSS *********/
+/*******************************/
+body {
+    color: #666666;
+    background: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+h1,
+h2, 
+h3, 
+h4,
+h5, 
+h6 {
+    font-family: 'EB Garamond', serif;
+    font-weight: 600;
+    font-style: italic;
+    color: #121518;
+}
+
+
+
+a:hover,
+a:active,
+a:focus {
+    color: #aa9166;
+    outline: none;
+    text-decoration: none;
+}
+
+.btn:focus {
+    box-shadow: none;
+}
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1366px;
+    margin: 0 auto;
+    background: #ffffff;
+}
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    background: #aa9166;
+    color: #121518;
+    width: 44px;
+    height: 44px;
+    text-align: center;
+    line-height: 1;
+    font-size: 22px;
+    right: 15px;
+    bottom: 15px;
+    transition: background 0.5s;
+    z-index: 9;
+}
+
+.back-to-top:hover {
+    color: #aa9166;
+    background: #121518;
+}
+
+.back-to-top i {
+    padding-top: 10px;
+}
+
+
+
+
+
+/*******************************/
+/******* Page Header CSS *******/
+/*******************************/
+.page-header {
+    position: relative;
+    margin-bottom: 45px;
+    padding: 90px 0;
+    text-align: center;
+    background: #011b58;
+}
+
+.page-header h2 {
+    position: relative;
+    color: #000000;
+    font-size: 60px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+}
+
+.page-header h2::after {
+    position: absolute;
+    content: "";
+    width: 100px;
+    height: 2px;
+    left: calc(50% - 50px);
+    bottom: 0;
+    background: #000000;
+}
+
+.page-header a {
+    position: relative;
+    padding: 0 12px;
+    font-size: 22px;
+    color: #000000;
+}
+
+.page-header a:hover {
+    color: #000000;
+}
+
+.page-header a::after {
+    position: absolute;
+    content: "/";
+    width: 8px;
+    height: 8px;
+    top: -2px;
+    right: -7px;
+    text-align: center;
+    color: #000000;
+}
+
+.page-header a:last-child::after {
+    display: none;
+}
+
+@media (max-width: 767.98px) {
+    .page-header h2 {
+        font-size: 35px;
+    }
+    
+    .page-header a {
+        font-size: 18px;
+    }
+}
+
+
+/*******************************/
+/******* Section Header ********/
+/*******************************/
+.section-header {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-header h2 {
+    margin: 0;
+    position: relative;
+    font-size: 50px;
+    font-weight: 700;
+    white-space: nowrap;
+    z-index: 1;
+}
+
+.section-header h2::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 7px;
+    left: 0;
+    top: 21px;
+    background: transparent;
+    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+    z-index: -1;
+}
+
+
+
+
+/*******************************/
+/********** About CSS **********/
+/*******************************/
+.text{
+    color: #000000;
+}
+.about {
+    position: relative;
+    width: 100%;
+    padding: 45px 0;
+}
+
+.about .section-header {
+    margin-bottom: 30px;
+}
+
+
+
+.about .about-text p {
+    font-size: 16px;
+}
+
+.about .about-text a.btn {
+    position: relative;
+    margin-top: 15px;
+    padding: 15px 35px;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #000000;
+    border: 2px solid #c8b6ff;
+    border-radius: 0;
+    background: #121518;
+    transition: .3s;
+}
+
+.about .about-text a.btn:hover {
+    color: rgb(0, 0, 0);
+    background: #011b58;
+}
+
+
+
+
+
+
+
+/*******************************/
+/********* Timeline CSS ********/
+/*******************************/
+.timeline {
+    position: relative;
+    padding: 45px 0;
+}
+
+.timeline .timeline-start {
+    position: relative;
+    width: calc(100% + 30px);
+    left: -15px;
+    right: -15px;
+}
+
+.timeline .timeline-container {
+    padding: 0 15px;
+    position: relative;
+    background: inherit;
+    width: 50%;
+    margin-top: -5px;
+}
+
+.timeline .timeline-container.left {
+    left: 0;
+}
+
+.timeline .timeline-container.right {
+    left: 50%;
+}
+
+.timeline .timeline-container::before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 5px;
+    background: #aa9166;
+    z-index: 1;
+}
+
+.timeline .timeline-container.left::before {
+    top: 0;
+    right: 0;
+}
+
+.timeline .timeline-container.right::before {
+    bottom: 0;
+    left: 0;
+}
+
+.timeline .timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 5px;
+    background: #aa9166;
+    z-index: 1;
+}
+
+.timeline .timeline-container.left::after {
+    bottom: 0;
+    right: 0;
+}
+
+.timeline .timeline-container.right::after {
+    top: 0;
+    left: 0;
+}
+
+.timeline .timeline-container:first-child::before,
+.timeline .timeline-container:last-child::before {
+    display: none;
+}
+
+.timeline .timeline-container .timeline-content {
+    padding: 30px;
+    background: #011b58;
+    position: relative;
+    border-right: 5px solid #011b58;
+}
+
+.timeline .timeline-container.right .timeline-content {
+    border-left: 5px solid #011b58;
+}
+
+.timeline .timeline-container .timeline-content h2 {
+    margin-bottom: 15px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #000000;
+}
+
+.timeline .timeline-container .timeline-content h2 span {
+    display: inline-block;
+    margin-right: 15px;
+    padding: 5px 10px;
+    color: #121518;
+    background: #aa9166;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+}
+
+.timeline .timeline-container .timeline-content p {
+    margin: 0;
+    font-size: 16px;
+    color: #000000;
+}
+
+@media (max-width: 767.98px) {
+    .timeline .timeline-container {
+        width: 100%;
+        margin-top: 0;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 30px;
+    }
+    
+    .timeline .timeline-container:last-child {
+        padding-bottom: 0;
+    }
+    
+    .timeline .timeline-container.right {
+        left: 0%;
+    }
+
+    .timeline .timeline-container.left::after, 
+    .timeline .timeline-container.right::after,
+    .timeline .timeline-container.left::before,
+    .timeline .timeline-container.right::before {
+        width: 5px;
+        height: 35px;
+        left: 15px;
+    }
+    
+    .timeline .timeline-container.left .timeline-content,
+    .timeline .timeline-container.right .timeline-content {
+        border-left: 5px solid #011b58;
+        border-right: none;
+    }
+}
+
+
+
+/*******************************/
+/**********mail Section *********/
+/*******************************/
+.mail {
+    position: relative;
+    max-width: 900px;
+    margin: 45px auto -140px auto;
+    padding: 30px 15px;
+    background: #011b58;
+    z-index: 1;
+}
+
+.mail .section-header {
+    margin-bottom: 25px;
+}
+
+.mail.section-header h2::before,
+.newsletter .section-header h2::after {
+    border-color: #ffffff;
+}
+
+.mail .form {
+    position: relative;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.mail input {
+    height: 50px;
+    border: 2px solid #121518;
+    border-radius: 0;
+}
+
+.mail .btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    height: 40px;
+    padding: 8px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #ececec;
+    background: #121518;
+    border-radius: 0;
+    border: 2px solid #aa9166;
+    transition: .3s;
+    
+}
+
+.mail .btn:hover {
+    color: #000000;
+    background: #ffffff;
+}
+
+
+
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+        <!-- Page Header Start -->
+            <div class="page-header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2>About Us</h2>
+                        </div>
+                        <div class="col-12">
+                            <a href="">Home</a>
+                            <a href="">About Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Page Header End -->
+
+
+            <!-- About Start -->
+            <div class="about">
+                <div class="container">
+                    <div class="row align-items-center">
+                       
+                        <div class="col-lg-7 col-md-6">
+                            <div class="section-header">
+                                <h2 class="text">Learn About Us</h2>
+                            </div>
+                            <div class="about-text">
+                                <p>
+                                    Welcome to "Alphine Ascents", where our passion for mountains meets the digital realm! Nestled in the heart of breathtaking landscapes and surrounded by towering peaks.
+                                </p>
+                                <p>
+                                    At "Alphine Ascents", we're not just about the summit; we're about the journey, the community, and the shared love for the untamed wilderness.Join this adventure with us, and let the spirit of the mountains captivate your soul.
+                                </p>
+                                <p>
+                                    At "Alphine Ascents", we believe that mountains are not just geographical features; they are living, breathing entities that have the power to inspire, challenge, and connect us with the raw essence of nature. Our team comprises experienced mountaineers, photographers, and storytellers who have explored the most iconic ranges worldwide.
+                                </p>
+                                <p>
+                                    Mountaineer seeking tips for your next ascent, a nature lover dreaming of serene alpine landscapes, or someone simply captivated by the allure of the peaks, you've found your digital base camp. Join us on a virtual journey as we traverse through stories of triumph, share the thrill of summit victories, and celebrate the profound beauty that only mountains can offer.
+                                </p>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            <!-- About End -->
+
+
+            <!-- Timeline Start -->
+            <div class="timeline">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="text">About Journey</h2>
+                    </div>
+                    <div class="timeline-start">
+                        <div class="timeline-container left">
+                            <div class="timeline-content">
+                                <h2>Group Traveling
+                                    </h2>
+                                <p>
+                                    Whenever possible, hike or climb with a friends or a group. Establish clear communication and signals within your group.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="timeline-container right">
+                            <div class="timeline-content">
+                                <h2>Changing Enviromment of Mountains
+                                  
+                                    </h2>
+                                <p>
+                                    Remember that mountain environments can be unpredictable, and conditions can change rapidly. Being well-prepared and informed enhances the enjoyment of your mountain experience while prioritizing safety.
+
+                                </p>
+                            </div>
+                        </div>
+                        <div class="timeline-container left">
+                            <div class="timeline-content">
+                                <h2>Wildlife Awareness
+                                     </h2>
+                                <p>
+                                    Be aware of potential wildlife encounters, and know how to react if you encounter animals. In some areas, insect repellent may be necessary to protect against insects like mosquitoes.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="timeline-container right">
+                            <div class="timeline-content">
+                                <h2> Safety precautions </h2>
+                                <p>
+                                    Carry a detailed map and compass, and know how to use them. GPS devices can also be useful, carry necessary safety gear such as helmets, harnesses, and ropes.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="timeline-container left">
+                            <div class="timeline-content">
+                                <h2>Strong Comunication System
+                                    </h2>
+                                <p>
+                                    Inform someone reliable about your plans, including your route, expected return time, and emergency contacts.Carry a fully charged cell phone and know the areas with cell reception. Consider a backup power source.
+                                </p>
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <!-- Timeline End -->
+
+ 
+
+
+            <!-- Mail Section -->
+            <div class="mail">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>Enter Your Email</h2>
+                    </div>
+                    <div class="form">
+                        <input class="form-control" placeholder="Email here">
+                        <button class="btn">Submit</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Mail Section -->
+
+
+
+            
+            
+        
+       
+    </body>
+</html>
